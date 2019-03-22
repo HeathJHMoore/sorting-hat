@@ -17,6 +17,10 @@ body {
     color: white;
 }
 
+.modal-body {
+    text-align: center;
+}
+
 .modal-footer {
     background-color: silver;
 }
