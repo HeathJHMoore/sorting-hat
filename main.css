@@ -11,3 +11,17 @@ body {
     background-color: goldenrod;
     border: solid 1px black;
 }
+
+.modal-header {
+    background-color: darkred;
+    color: white;
+}
+
+.modal-footer {
+    background-color: silver;
+}
+
+#sortButton {
+    background-color: goldenrod;
+    border: solid 1px black;
+}
