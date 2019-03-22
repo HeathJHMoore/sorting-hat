@@ -1,3 +1,13 @@
 body {
     background-color: silver;
 }
+
+.jumbotron {
+    background-color: darkred;
+    color: white;
+}
+
+#letsStartSorting {
+    background-color: goldenrod;
+    border: solid 1px black;
+}
