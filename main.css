@@ -25,3 +25,7 @@ body {
     background-color: goldenrod;
     border: solid 1px black;
 }
+
+.my-4 {
+    background-color: silver;
+}
