@@ -22,10 +22,12 @@ const errorMessage = () => {
 const sort = () => {
     let domString = ``;
     const studentName = document.getElementById("nameInput").value;
+    const alertBox = document.getElementById("alert");
     if (studentName === '') {
         errorMessage();
         return;
     };
+    alertBox.style.display = 'none';
     counter();
     const houseNumber = Math.ceil(Math.random() * 4);
     let studentHouse = ``;
@@ -60,7 +62,6 @@ const expel = (e) => {
 
 
 const buttonEvents = () => {
-    // document.getElementById("sortButton").addEventListener('click', counter);
     document.getElementById("sortButton").addEventListener('click', sort);
     document.getElementById("sortButton").addEventListener("click", clear);
     document.addEventListener("click", function(e) {
