@@ -1,4 +1,3 @@
-console.log("whats up");
 
 const printToDom = (divId, elementToAppend) => {
     const selectedDiv = document.getElementById(divId);
@@ -27,9 +26,9 @@ const sort = () => {
     } else if (houseNumber === 4) {
         studentHouse = `Slytherin`;
     };
-    domString +=  `<h2>${studentName}<h2>`;
+    domString +=  `<h2>${studentName}</h2>`;
     domString +=  `<p>${studentHouse}</p>`;
-    domString +=  `<button class="btn btn-primary expel" id="expel${count}">Expel</button>`;
+    domString +=  `<button type="button" class="btn btn-primary expel" id="expel${count}">Expel</button>`;
     const newCard = document.createElement('div');
     newCard.innerHTML = domString;
     newCard.id = `card${count}`;
@@ -41,12 +40,23 @@ const clear = () => {
     document.getElementById("nameInput").value = ``;
 }
 
+const expel = (e) => {
+    const cardToRemove = e.target.parentNode;
+    const parentContainer = cardToRemove.parentNode;
+    parentContainer.removeChild(cardToRemove);
+}
+
 
 const buttonEvents = () => {
     document.getElementById("sortButton").addEventListener('click', counter);
     document.getElementById("sortButton").addEventListener('click', sort);
     document.getElementById("sortButton").addEventListener("click", clear);
-}
+    document.addEventListener("click", function(e) {
+        if (e.target.className === "btn btn-primary expel") {
+            expel(e);
+        }
+    });
+};
 
 const init = () => {
     buttonEvents();

@@ -10,6 +10,7 @@ body {
 #letsStartSorting {
     background-color: goldenrod;
     border: solid 2px black;
+    outline: none;
 }
 
 .modal-header {
@@ -40,11 +41,15 @@ body {
     text-align: center;
 }
 
+
 .card p {
     font-size: 17px;
 }
 
-.expel {
-    background-color: goldenrod;
+
+.expel:hover {
+    background-color: black;
     border: solid 2px black;
+    color: white;
+    font-weight: bold;
 }
