@@ -9,7 +9,7 @@ body {
 
 #letsStartSorting {
     background-color: goldenrod;
-    border: solid 1px black;
+    border: solid 2px black;
 }
 
 .modal-header {
@@ -32,4 +32,19 @@ body {
 
 .my-4 {
     background-color: silver;
+}
+
+.card {
+    width: 23%;
+    margin: 10px;
+    text-align: center;
+}
+
+.card p {
+    font-size: 17px;
+}
+
+.expel {
+    background-color: goldenrod;
+    border: solid 2px black;
 }
