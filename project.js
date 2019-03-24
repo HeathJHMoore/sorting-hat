@@ -8,7 +8,7 @@ let count = 0
 
 const counter = () => {
     count = count + 1;
-     console.log(count);
+    console.log(count);
 }
 
 const errorMessage = () => {
@@ -48,14 +48,17 @@ const sort = () => {
     newCard.id = `card${count}`;
     if (studentHouse === 'Gryffindor') {
         newCard.className = `card gryffindor`;
+        printToDom('gryffindorContainer', newCard)
     } else if (studentHouse === 'Hufflepuff') {
         newCard.className = `card hufflepuff`;
+        printToDom('hufflepuffContainer', newCard)
     } else if (studentHouse === 'Ravenclaw') {
         newCard.className = `card ravenclaw`;
+        printToDom('ravenclawContainer', newCard)
     } else if (studentHouse === 'Slytherin') {
         newCard.className = `card slytherin`;
+        printToDom('slytherinContainer', newCard)
     };
-    printToDom('cardContainer', newCard);
 }
 
 const clear = () => {

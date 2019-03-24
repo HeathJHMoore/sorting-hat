@@ -106,3 +106,35 @@ body {
       background-color: green;
       color: black;
   }
+
+  .houseHeaders {
+      text-align: center;
+  }
+
+  #gryffindorContainer {
+      background-color: black;
+      border: solid 1px white;
+      margin-bottom: 20px;
+  }
+  
+
+  #hufflepuffContainer {
+      background-color: black;
+      border: solid 1px white;
+      margin-bottom: 20px;
+  }
+ 
+
+  #ravenclawContainer {
+      background-color: black;
+      border: solid 1px white;
+      margin-bottom: 20px;
+  }
+ 
+
+  #slytherinContainer {
+      background-color: black;
+      border: solid 1px white;
+      margin-bottom: 20px;
+  }
+
