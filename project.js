@@ -46,7 +46,15 @@ const sort = () => {
     const newCard = document.createElement('div');
     newCard.innerHTML = domString;
     newCard.id = `card${count}`;
-    newCard.className = `card`;
+    if (studentHouse === 'Gryffindor') {
+        newCard.className = `card gryffindor`;
+    } else if (studentHouse === 'Hufflepuff') {
+        newCard.className = `card hufflepuff`;
+    } else if (studentHouse === 'Ravenclaw') {
+        newCard.className = `card ravenclaw`;
+    } else if (studentHouse === 'Slytherin') {
+        newCard.className = `card slytherin`;
+    };
     printToDom('cardContainer', newCard);
 }
 

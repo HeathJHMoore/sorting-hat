@@ -46,12 +46,15 @@ body {
     font-size: 17px;
 }
 
+.expel {
+    background-color: white;
+    color: black;
+    border: solid px black;
+}
 
 .expel:hover {
     background-color: black;
-    border: solid 2px black;
     color: white;
-    font-weight: bold;
 }
 
 /* The alert message box */
@@ -82,4 +85,24 @@ body {
   /* When moving the mouse over the close button */
   .closebtn:hover {
     color: black;
+  }
+
+  .gryffindor {
+      background-color: darkred;
+      color: white;
+  }
+
+  .hufflepuff {
+      background-color: yellow;
+      color: black;
+  }
+
+  .ravenclaw {
+      background-color: blue;
+      color: white
+  }
+
+  .slytherin {
+      background-color: green;
+      color: black;
   }
