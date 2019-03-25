@@ -1,10 +1,22 @@
+let count = 0;
+
+let gryffindorNames = [];
+let gryffindorObjects = [];
+
+let hufflepuffNames = [];
+let hufflepuffObjects = [];
+
+let ravenclawNames = [];
+let ravenclawObjects = [];
+
+let slytherinNames = [];
+let slytherinObjects = [];
+
 
 const printToDom = (divId, elementToAppend) => {
     const selectedDiv = document.getElementById(divId);
     selectedDiv.appendChild(elementToAppend);
 }
-
-let count = 0
 
 const counter = () => {
     count = count + 1;
@@ -21,7 +33,7 @@ const errorMessage = () => {
 
 const sort = () => {
     let domString = ``;
-    const studentName = document.getElementById("nameInput").value;
+    let studentName = document.getElementById("nameInput").value;
     const alertBox = document.getElementById("alert");
     if (studentName === '') {
         errorMessage();
@@ -48,15 +60,43 @@ const sort = () => {
     newCard.id = `card${count}`;
     if (studentHouse === 'Gryffindor') {
         newCard.className = `card gryffindor`;
-        printToDom('gryffindorContainer', newCard)
+        gryffindorNames.push(`${studentName}`);
+        gryffindorNames = gryffindorNames.sort();
+        studentName = {
+            name: `${studentName}`,
+            house: `${studentHouse}`
+        };
+        gryffindorObjects.push(studentName);
+        printToDom('gryffindorContainer', newCard);
     } else if (studentHouse === 'Hufflepuff') {
         newCard.className = `card hufflepuff`;
+        hufflepuffNames.push(`${studentName}`);
+        hufflepuffNames = hufflepuffNames.sort();
+        studentName = {
+            name: `${studentName}`,
+            house: `${studentHouse}`
+        };
+        hufflepuffObjects.push(studentName);
         printToDom('hufflepuffContainer', newCard)
     } else if (studentHouse === 'Ravenclaw') {
         newCard.className = `card ravenclaw`;
+        ravenclawNames.push(`${studentName}`);
+        ravenclawNames = ravenclawNames.sort();
+        studentName = {
+            name: `${studentName}`,
+            house: `${studentHouse}`
+        };
+        ravenclawObjects.push(studentName);
         printToDom('ravenclawContainer', newCard)
     } else if (studentHouse === 'Slytherin') {
         newCard.className = `card slytherin`;
+        slytherinNames.push(`${studentName}`);
+        slytherinNames = slytherinNames.sort();
+        studentName = {
+            name: `${studentName}`,
+            house: `${studentHouse}`
+        };
+        slytherinObjects.push(studentName);
         printToDom('slytherinContainer', newCard)
     };
 }
@@ -71,6 +111,28 @@ const expel = (e) => {
     parentContainer.removeChild(cardToRemove);
 }
 
+const alphabetize = () => {
+    document.getElementById('gryffindorContainer').innerHTML = ``;
+    gryffindorNames.forEach((alphabetName) => {
+        gryffindorObjects.forEach((object) => {
+            if (object.name === alphabetName) {
+                let alphabetDomString = ``;
+                alphabetDomString +=  `<h2>${object.name}</h2>`;
+                alphabetDomString +=  `<p>${object.house}</p>`;
+                alphabetDomString +=  `<button type="button" class="btn btn-primary expel" id="expel${count}">Expel</button>`;
+                const alphabetCard = document.createElement('div');
+                alphabetCard.innerHTML = alphabetDomString;
+                alphabetCard.className = `card gryffindor`;
+                printToDom('gryffindorContainer', alphabetCard);
+            };
+        })
+    });
+    //for loop through each house array of student names
+       //for each loop through array of objects containing card information to see where object.studentName === student name in house array
+         //build domstring based on student name and house name key values found in object
+         //create new card and set inner html = to domstring
+         //append new card to appropriate house container
+}
 
 const buttonEvents = () => {
     document.getElementById("sortButton").addEventListener('click', sort);
@@ -80,6 +142,7 @@ const buttonEvents = () => {
             expel(e);
         }
     });
+    document.getElementById("alphabetizeButton").addEventListener("click", alphabetize);
 };
 
 const init = () => {
@@ -87,3 +150,6 @@ const init = () => {
 }
 
 init();
+
+
+
