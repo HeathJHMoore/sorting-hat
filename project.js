@@ -67,7 +67,7 @@ const sort = () => {
             house: `${studentHouse}`
         };
         gryffindorObjects.push(studentName);
-        printToDom('gryffindorContainer', newCard);
+        // printToDom('gryffindorContainer', newCard);
     } else if (studentHouse === 'Hufflepuff') {
         newCard.className = `card hufflepuff`;
         hufflepuffNames.push(`${studentName}`);
@@ -77,7 +77,7 @@ const sort = () => {
             house: `${studentHouse}`
         };
         hufflepuffObjects.push(studentName);
-        printToDom('hufflepuffContainer', newCard)
+        // printToDom('hufflepuffContainer', newCard)
     } else if (studentHouse === 'Ravenclaw') {
         newCard.className = `card ravenclaw`;
         ravenclawNames.push(`${studentName}`);
@@ -87,7 +87,7 @@ const sort = () => {
             house: `${studentHouse}`
         };
         ravenclawObjects.push(studentName);
-        printToDom('ravenclawContainer', newCard)
+        // printToDom('ravenclawContainer', newCard)
     } else if (studentHouse === 'Slytherin') {
         newCard.className = `card slytherin`;
         slytherinNames.push(`${studentName}`);
@@ -97,8 +97,9 @@ const sort = () => {
             house: `${studentHouse}`
         };
         slytherinObjects.push(studentName);
-        printToDom('slytherinContainer', newCard)
+        // printToDom('slytherinContainer', newCard)
     };
+    alphabetize();
 }
 
 const clear = () => {
@@ -127,6 +128,51 @@ const alphabetize = () => {
             };
         })
     });
+    document.getElementById('hufflepuffContainer').innerHTML = ``;
+    hufflepuffNames.forEach((alphabetName) => {
+        hufflepuffObjects.forEach((object) => {
+            if (object.name === alphabetName) {
+                let alphabetDomString = ``;
+                alphabetDomString +=  `<h2>${object.name}</h2>`;
+                alphabetDomString +=  `<p>${object.house}</p>`;
+                alphabetDomString +=  `<button type="button" class="btn btn-primary expel" id="expel${count}">Expel</button>`;
+                const alphabetCard = document.createElement('div');
+                alphabetCard.innerHTML = alphabetDomString;
+                alphabetCard.className = `card hufflepuff`;
+                printToDom('hufflepuffContainer', alphabetCard);
+            };
+        })
+    });
+    document.getElementById('ravenclawContainer').innerHTML = ``;
+    ravenclawNames.forEach((alphabetName) => {
+        ravenclawObjects.forEach((object) => {
+            if (object.name === alphabetName) {
+                let alphabetDomString = ``;
+                alphabetDomString +=  `<h2>${object.name}</h2>`;
+                alphabetDomString +=  `<p>${object.house}</p>`;
+                alphabetDomString +=  `<button type="button" class="btn btn-primary expel" id="expel${count}">Expel</button>`;
+                const alphabetCard = document.createElement('div');
+                alphabetCard.innerHTML = alphabetDomString;
+                alphabetCard.className = `card ravenclaw`;
+                printToDom('ravenclawContainer', alphabetCard);
+            };
+        })
+    });
+    document.getElementById('slytherinContainer').innerHTML = ``;
+    slytherinNames.forEach((alphabetName) => {
+        slytherinObjects.forEach((object) => {
+            if (object.name === alphabetName) {
+                let alphabetDomString = ``;
+                alphabetDomString +=  `<h2>${object.name}</h2>`;
+                alphabetDomString +=  `<p>${object.house}</p>`;
+                alphabetDomString +=  `<button type="button" class="btn btn-primary expel" id="expel${count}">Expel</button>`;
+                const alphabetCard = document.createElement('div');
+                alphabetCard.innerHTML = alphabetDomString;
+                alphabetCard.className = `card slytherin`;
+                printToDom('slytherinContainer', alphabetCard);
+            };
+        })
+    });
     //for loop through each house array of student names
        //for each loop through array of objects containing card information to see where object.studentName === student name in house array
          //build domstring based on student name and house name key values found in object
@@ -142,7 +188,6 @@ const buttonEvents = () => {
             expel(e);
         }
     });
-    document.getElementById("alphabetizeButton").addEventListener("click", alphabetize);
 };
 
 const init = () => {
