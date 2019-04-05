@@ -2,7 +2,7 @@
 
 Sort any class or group into their proper Hogwarts house using this web app! 
 
-![Image of Web-page.](https://raw.githubusercontent.com/HeathJHMoore/Product_Cards/master/images/Product_Cards.png "Screenshot of my webpage")
+![Image of Web-page.](https://raw.githubusercontent.com/HeathJHMoore/sorting-hat/master/images/Screen%20Shot%202019-04-02%20at%206.17.56%20PM.png "Screenshot of my webpage")
 
 
 ## Pre Requisites
